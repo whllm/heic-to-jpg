@@ -4,9 +4,10 @@
 import os, subprocess
 
 directory = '.'
+sub = '.\out'
 
 for filename in os.listdir(directory):
     if filename.lower().endswith(".heic"): 
         print('Converting %s...' % os.path.join(directory, filename))
-        subprocess.run(["magick", "%s" % filename, "%s" % (filename[0:-5] + '.jpg')])
+        subprocess.run(["magick", "%s" % filename, "%s" % (os.path.join(sub, directory) + filename[0:-5] + '.jpg')])
         continue
