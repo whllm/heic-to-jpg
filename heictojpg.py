@@ -1,5 +1,7 @@
 #HEIC to JPG image format batch conversion script for Python 3. Tested on Windows 10.
 #You will need to have ImageMagick installed: https://www.imagemagick.org/
+#Alternative powershell one-liner since we need magick installed anyway: 
+#Get-ChildItem -Filter "*.heic" | ForEach-Object {$name=$_.Name.Substring(0, $_.Name.Length -5); Write-Host "Converting $_"; magick $_ "output\\$name.jpg"}
 
 import os, subprocess
 
